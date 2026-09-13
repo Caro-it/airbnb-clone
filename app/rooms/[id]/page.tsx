@@ -5,6 +5,10 @@ import { useParams } from "next/navigation";
 import { Room } from "@/types/listing";
 import { getRoomById } from "@/data/rooms";
 import Loading from "@/components/Loading";
+import PhotoGallery from "@/components/PhotoGallery";
+import HostInfo from "@/components/HostInfo";
+import AmenitiesList from "@/components/AmenitiesList";
+import ReservationCard from "@/components/ReservationCard";
 
 const RoomPage = () => {
   const params = useParams();
@@ -34,10 +38,19 @@ const RoomPage = () => {
   return (
     <main className="mx-auto min-h-screen max-w-5xl bg-white px-4 py-6 text-gray-900">
       <h1 className="text-2xl font-semibold">{room.title}</h1>
-      <p className="mt-1 text-sm text-gray-700">
+      <p className="mb-4 mt-1 text-sm text-gray-700">
         ★ {room.rating} · {room.reviewsCount} reseñas · {room.location}
       </p>
-      <p className="mt-6 text-gray-400">[Aquí irán galería, anfitrión, servicios y reserva]</p>
+
+      <PhotoGallery photos={room.photos} />
+
+      <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-[2fr_1fr]">
+        <div>
+          <HostInfo name={room.host.name} yearsHosting={room.host.yearsHosting} />
+          <AmenitiesList amenities={room.amenities} />
+        </div>
+        <ReservationCard pricePerNight={room.pricePerNight} />
+      </div>
     </main>
   );
 };
