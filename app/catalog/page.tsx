@@ -7,6 +7,7 @@ import ResultsHeader, { SortOrder } from "@/components/ResultsHeader";
 import ListingGrid from "@/components/ListingGrid";
 import MapPlaceholder from "@/components/MapPlaceholder";
 import Loading from "@/components/Loading";
+import Link from "next/link";
 
 const CatalogPage = () => {
   const [listings, setListings] = useState<Listing[]>([]);
@@ -29,6 +30,9 @@ const CatalogPage = () => {
 
   return (
     <main className="mx-auto min-h-screen max-w-7xl bg-white px-4 py-6 text-gray-900">
+            <Link href="/" className="mb-2 inline-block text-sm text-gray-700 hover:underline">
+        ← Inicio
+      </Link>
       <h1 className="mb-4 text-2xl font-semibold">Catálogo</h1>
       {loading ? (
         <Loading />

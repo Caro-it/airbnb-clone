@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Listing } from "@/types/listing";
 
 interface ListingCardProps {
@@ -6,7 +7,7 @@ interface ListingCardProps {
 
 const ListingCard = ({ listing }: ListingCardProps) => {
   return (
-    <article className="flex flex-col">
+    <Link href={`/rooms/${listing.id}`} className="flex flex-col">
       <div className="flex aspect-square w-full items-center justify-center rounded-xl bg-gray-200 text-sm text-gray-400">
         {listing.imageAlt}
       </div>
@@ -23,7 +24,7 @@ const ListingCard = ({ listing }: ListingCardProps) => {
           <span className="font-semibold">{listing.pricePerNight} €</span> noche
         </p>
       </div>
-    </article>
+    </Link>
   );
 };
 
