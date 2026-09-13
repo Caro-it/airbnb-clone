@@ -170,3 +170,51 @@ Componentes en /components (uno por archivo):
 - ListingCard (placeholder de foto, título, precio/noche, valoración)
 - ListingGrid (grid-cols-1 md:grid-cols-2 lg:grid-cols-3)
 - Loading (indicador mientras loading es true)
+
+## Especificación Catálogo (derivada de captura de resultados, 375px)
+
+La captura de la vista de resultados de Airbnb (búsqueda de un destino en móvil)
+generó una especificación amplia con estos componentes: SearchTopBar,
+FilterChipsBar, MapPanel con PriceMarker, ResultsSummary, ListingList,
+ListingCard y BottomTabBar.
+
+### Reconciliación con el brief (Catálogo)
+El brief pide para /catalog solo tres piezas, que mapeo a componentes ya
+existentes en el repo (reutilizados de la Home):
+
+- Cabecera de resultados (nº + orden asc/desc por precio) → ResultsHeader
+- Lista/cuadrícula de tarjetas → ListingGrid (columna en móvil, grid en desktop)
+- Área de mapa → MapPlaceholder (recuadro gris "Mapa"; el brief pide placeholder,
+  no mapa real con pines)
+
+Componentes de la captura NO incluidos por estar fuera del alcance del brief:
+SearchTopBar, FilterChipsBar, PriceMarker, DragHandle, FavoriteButton,
+ListingBadge, BottomTabBar. Son fidelidad visual de la app real, no requisitos
+del reto.
+
+## Especificación Detalle (derivada de captura, 375px)
+
+La captura de la parte superior de la ficha de Airbnb (galería + cabecera +
+barra de reserva) generó una especificación con: PhotoGallery (con
+GalleryTopControls y PhotoCounter), RoomSummaryCard, RoomHeader,
+RatingSummaryRow, ReservationBar (PriceSummary + ReserveButton) y
+CancellationNote. HostInfo y AmenitiesList quedan más abajo en el scroll.
+
+### Reconciliación con el brief (Detalle)
+El brief pide cinco secciones, que mapeo a componentes ya existentes en el repo:
+
+- Galería de fotos con anterior/siguiente (useState) → PhotoGallery
+- Cabecera (título, valoración, reseñas, ubicación) → cabecera de RoomPage
+- Info del anfitrión → HostInfo
+- Servicios (amenities) → AmenitiesList
+- Tarjeta de reserva (precio + contador de huéspedes con useState + CTA)
+  → ReservationCard
+
+Diferencia deliberada: la barra de reserva real usa precio total + fechas;
+mi ReservationCard usa precio/noche + contador de huéspedes (cumple el brief).
+El precio total con fechas se aborda en el reto opcional (date picker).
+
+Componentes de la captura NO incluidos por estar fuera del alcance del brief:
+GalleryTopControls, FavoriteToggleButton, PhotoCounter (píldora), 
+RecommendationBadge, CancellationNote, RoomSummaryCard superpuesta.
+Son fidelidad visual de
