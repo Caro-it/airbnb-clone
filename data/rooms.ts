@@ -1,0 +1,73 @@
+import { Room } from "@/types/listing";
+
+export const ROOMS: Room[] = [
+  {
+    id: "1",
+    title: "Ático luminoso con vistas",
+    location: "Móra d'Ebre, Tarragona",
+    pricePerNight: 92,
+    rating: 4.96,
+    reviewsCount: 128,
+    photos: ["Salón con vistas", "Dormitorio principal", "Cocina abierta", "Terraza"],
+    host: { name: "Marta", yearsHosting: 6 },
+    amenities: ["Wifi", "Cocina", "Aire acondicionado", "Parking gratis", "Lavadora", "TV"],
+  },
+  {
+    id: "2",
+    title: "Casa junto al mar",
+    location: "Tarragona",
+    pricePerNight: 145,
+    rating: 4.8,
+    reviewsCount: 74,
+    photos: ["Fachada frente al mar", "Salón", "Habitación doble", "Playa cercana"],
+    host: { name: "Jordi", yearsHosting: 3 },
+    amenities: ["Wifi", "Acceso a la playa", "Cocina", "Terraza", "Barbacoa"],
+  },
+  {
+    id: "3",
+    title: "Villa con piscina privada",
+    location: "Sitges",
+    pricePerNight: 320,
+    rating: 4.99,
+    reviewsCount: 210,
+    photos: ["Piscina privada", "Salón de lujo", "Suite principal", "Jardín"],
+    host: { name: "Elena", yearsHosting: 9 },
+    amenities: ["Piscina", "Wifi", "Cocina", "Parking gratis", "Aire acondicionado", "Jardín"],
+  },
+  {
+    id: "4",
+    title: "Cabaña de madera en el bosque",
+    location: "Prades",
+    pricePerNight: 78,
+    rating: 4.72,
+    reviewsCount: 56,
+    photos: ["Cabaña exterior", "Interior de madera", "Chimenea", "Bosque"],
+    host: { name: "Pau", yearsHosting: 4 },
+    amenities: ["Wifi", "Chimenea", "Cocina", "Parking gratis", "Calefacción"],
+  },
+  {
+    id: "5",
+    title: "Loft de diseño en el centro",
+    location: "Barcelona",
+    pricePerNight: 130,
+    rating: 4.88,
+    reviewsCount: 163,
+    photos: ["Loft diáfano", "Zona de trabajo", "Dormitorio", "Baño de diseño"],
+    host: { name: "Clara", yearsHosting: 5 },
+    amenities: ["Wifi", "Cocina", "Aire acondicionado", "Ascensor", "TV"],
+  },
+  {
+    id: "6",
+    title: "Apartamento acogedor",
+    location: "Reus",
+    pricePerNight: 65,
+    rating: 4.6,
+    reviewsCount: 42,
+    photos: ["Salón acogedor", "Cocina", "Dormitorio", "Balcón"],
+    host: { name: "Nuria", yearsHosting: 2 },
+    amenities: ["Wifi", "Cocina", "Calefacción", "Lavadora"],
+  },
+];
+
+export const getRoomById = (id: string): Room | undefined =>
+  ROOMS.find((room) => room.id === id);
