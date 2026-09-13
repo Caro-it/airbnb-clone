@@ -6,6 +6,8 @@ export interface Listing {
   rating: number;          // 0–5
   category: string;
   imageAlt: string;        // texto del placeholder (no hay foto real)
+  lat: number;             // latitud para el mapa
+  lng: number;             // longitud para el mapa
 }
 
 export interface Room {

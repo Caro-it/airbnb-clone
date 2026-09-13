@@ -5,7 +5,7 @@ import { Listing } from "@/types/listing";
 import { LISTINGS } from "@/data/listings";
 import ResultsHeader, { SortOrder } from "@/components/ResultsHeader";
 import ListingGrid from "@/components/ListingGrid";
-import MapPlaceholder from "@/components/MapPlaceholder";
+import CatalogMap from "@/components/CatalogMap";
 import Loading from "@/components/Loading";
 import Link from "next/link";
 
@@ -45,7 +45,7 @@ const CatalogPage = () => {
           />
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-[2fr_1fr]">
             <ListingGrid listings={sortedListings} />
-            <MapPlaceholder />
+            <CatalogMap listings={sortedListings} />
           </div>
         </>
       )}
